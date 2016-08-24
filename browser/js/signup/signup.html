@@ -1,0 +1,42 @@
+<section id="about"><h2>Create Your Card</h2><hr></section>
+<div ng-controller="SignupCtrl" layout="column" ng-cloak>
+    <md-content layout-padding>
+        <form name="signupForm" id="signup-form" ng-submit="signupForm.$valid && sendSignup(signup)">
+
+            <md-input-container class="md-block">
+                <label>First Name</label>
+                <input type="text" name="firstName" ng-model="signup.firstName" required>
+                <p ng-message="required" ng-show="signupForm.firstName.$invalid && !signupForm.firstName.$pristine">Your first name is required</p>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Last Name</label>
+                <input type="text" name="lastName" ng-model="signup.lastName" required>
+                <p ng-message="required" ng-show="signupForm.lastName.$invalid && !signupForm.lastName.$pristine">Your last name is required</p>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Location</label>
+                <input type="text" name="location" ng-model="signup.location" required>
+                <p ng-message="required" ng-show="signupForm.location.$invalid && !signupForm.location.$pristine">Your location is required</p>
+            </md-input-container>
+
+            <md-datepicker ng-model="signup.date" md-placeholder="Date of birth"></md-datepicker>
+            <br><br>
+
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input type="text" name="email" ng-model="signup.email" required>
+                <p ng-message="required" ng-show="signupForm.email.$invalid && !signupForm.email.$pristine">Your email is required</p>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="signup.password" required>
+                <p ng-message="required" ng-show="signupForm.password.$invalid && !signupForm.password.$pristine">A password is required</p>
+            </md-input-container>
+            <md-button class="btn1 md-raised" type="submit">Signup</button>
+        </form>
+    </md-content>
+</div>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>

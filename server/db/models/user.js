@@ -1,29 +1,41 @@
 'use strict';
+
 var crypto = require('crypto');
 var _ = require('lodash');
 var Sequelize = require('sequelize');
+var Card = require('./card');
 
 var db = require('../_db');
 
 module.exports = db.define('user', {
-    email: {
-        type: Sequelize.STRING
+	email: {
+		type: Sequelize.STRING,
+		validate: {
+			isEmail: true
+		}
+	},
+	password: {
+		type: Sequelize.STRING
+	},
+	firstName: {
+		type: Sequelize.STRING
+	},
+	lastName:  {
+		type: Sequelize.STRING
+	},
+    age: {
+        type: Sequelize.DATE
     },
-    password: {
-        type: Sequelize.STRING
+    location: {
+        type: Sequelize.TEXT
     },
-    salt: {
-        type: Sequelize.STRING
-    },
-    twitter_id: {
-        type: Sequelize.STRING
-    },
-    facebook_id: {
-        type: Sequelize.STRING
-    },
-    google_id: {
-        type: Sequelize.STRING
-    }
+	isAuthetnticated: {
+		type: Sequelize.BOOLEAN,
+		defaultValue: false
+	},
+	salt: {
+		type: Sequelize.STRING
+	}
 }, {
     instanceMethods: {
         sanitize: function () {
@@ -43,6 +55,11 @@ module.exports = db.define('user', {
             hash.update(salt);
             return hash.digest('hex');
         }
+    },
+        defaultScope: {
+        include: [{
+            model: db.model('card'),
+        }]
     },
     hooks: {
         beforeValidate: function (user) {

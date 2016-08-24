@@ -1,0 +1,87 @@
+<section id="about">
+    <h2>Cards In Your Circle</h2>
+    <hr>
+    <br>
+    <div ng-controller="CardsController as ctrl" layout="column" ng-cloak>
+        <md-content class="md-padding">
+            <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Search for a Card">
+                <md-item-template>
+                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                </md-item-template>
+                <md-not-found>
+                    No cards matching "{{ctrl.searchText}}" were found.
+                </md-not-found>
+            </md-autocomplete>
+            <br/>
+            </form>
+        </md-content>
+    </div>
+    <div id="card" flex="50" layout="column" layout-align="center center">
+        <md-card layout-align="center">
+            <md-card-header>
+                <md-card-avatar>
+                    <img class="md-user-avatar" src="https://s8.postimg.org/8hbuv2e7p/beautiful_girl_beach_jeans_sunglasses_1680x1050.jpg">
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">Lydia Scott</span>
+                    <span class="md-subhead">25. SoCal. </span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-src="https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg" alt="header">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Raw denim hashtag viral thundercats actually umami</span>
+                    <span class="md-subhead">Letterpress ugh deep v food truck gluten-free. Pitchfork iPhone marfa everyday carry tofu, viral echo park kinfolk.</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button>Facebook</md-button>
+                <md-button>Twitter</md-button>
+                <md-button>Instagram</md-button>
+                <md-button>Snapchat</md-button>
+            </md-card-actions>
+            <md-card-content>
+                <p>
+                    IPhone kale chips freegan, ethical ramps hashtag offal tacos cliche drinking vinegar hammock migas DIY. Heirloom man braid banh mi meggings beard man bun chartreuse. Art party locavore pour-over bicycle rights, crucifix blog cronut. Craft beer wolf intelligentsia chartreuse, pickled selfies bicycle rights waistcoat lo-fi sustainable. Whatever seitan forage leggings, affogato man braid stumptown pickled ennui aesthetic deep v austin. Cold-pressed mixtape mumblecore, pickled skateboard bicycle rights raw denim venmo letterpress. Chillwave farm-to-table four dollar toast viral.
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <br>
+    <br>
+</section>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>
+<!-- <div class="container" id="cardws">
+    <div class="form-group">
+        <form ng-submit="submit()">
+            <div class="input spacing col-xs-12">
+                <input type="text" ng-model="search" placeholder="Search For a Card" type="submit">
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class='col-xs-10'>
+            <h3>&nbsp;&nbsp;Cards</h3>
+            <div class="row">
+                <div ng-repeat="card in products">
+                    <div class="clearfix" ng-if="$index % 3 == 0"></div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <a ui-sref="card({id: card.id})"><img ng-src="{{ card.imageUrl }}"></a>
+                            <div class="caption">
+                                <h5><a ui-sref="card({id: card.id})">{{ card.name }}</a></h5>
+                                <span>{{ card.price | currency }}</span>
+                                <br>
+                                <small><i>{{ card.description }}</i></small>
+                                <ul class="list-inline">
+                                    <li ng-repeat="tag in card.tags" ng-click="setCategory(tag)"><a href="#">{{tag}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,40 @@
+<div class="container" id="account">
+    <h2>Your Account</h2>
+    <hr>
+    <div class="col-xs-12">
+        <h3>Settings</h3>
+        <h5><i>Name, Email, & Password</i></h5>
+        <h6>You can edit your information below</h6>
+        <br>
+        <div ng-controller="AccountCtrl" layout="column" ng-cloak>
+            <md-content layout-padding>
+                <form name="accountForm" id="account-form">
+                <div class="col-xs-6">
+                    <md-input-container class="md-block">
+                        <label for="firstName">Current First Name: {{user.firstName}}</label>
+                        <input type="text" name="update.firstName" id="firstName" placeholder="New first name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="firstName">Current Last Name: {{user.lastName}}</label>
+                        <input type="text" name="update.lastName" id="lastName" placeholder="New last name">
+                    </md-input-container>
+                </div>
+                <div class="col-xs-6">
+                    <md-input-container class="md-block">
+                        <label for="email">Current email: {{user.email}}</label>
+                        <input type="text" name="update.email" placeholder="New email">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Current Password: **********</label>
+                        <input type="password" name="update.password" placeholder="New email">
+                    </md-input-container>
+                </div>
+                    <md-button class="btn1 md-raised" type="submit" ng-click="sendUpdate()">Update</md-button>
+                </form>
+            </md-content>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>

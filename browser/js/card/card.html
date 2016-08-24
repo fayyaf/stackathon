@@ -1,0 +1,35 @@
+<div class="container" id="account">
+<div id="card" flex="50" layout="column" layout-align="center center" ng-controller="CardCtrl" ng-cloak>
+    <md-card layout-align="center">
+        <md-card-header>
+            <md-card-avatar>
+                <img class="md-user-avatar" src="http://shackmanlab.org/wp-content/uploads/2013/07/person-placeholder.jpg">
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{user.firstName}} {{user.lastName}}</span>
+                <span class="md-subhead">{{user.age}}. {{user.location}}.</span>
+            </md-card-header-text>
+        </md-card-header>
+        <img ng-src="http://www.twitrcovers.com/wp-content/uploads/2012/10/Ocean-Seas-l.jpg" class="md-card-image" alt="image caption">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline"></span>
+                <span class="md-subhead">Letterpress ugh deep v food truck gluten-free. Pitchfork iPhone marfa everyday carry tofu, viral echo park kinfolk. {{card.facebook}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center">
+            <md-button>Facebook</md-button>
+            <md-button>Twitter</md-button>
+            <md-button>Instagram</md-button>
+            <md-button>Snapchat</md-button>
+        </md-card-actions>
+        <md-card-content>
+            <p>
+                IPhone kale chips freegan, ethical ramps hashtag offal tacos cliche drinking vinegar hammock migas DIY. Heirloom man braid banh mi meggings beard man bun chartreuse. Art party locavore pour-over bicycle rights, crucifix blog cronut. Craft beer wolf intelligentsia chartreuse, pickled selfies bicycle rights waistcoat lo-fi sustainable. Whatever seitan forage leggings, affogato man braid stumptown pickled ennui aesthetic deep v austin. Cold-pressed mixtape mumblecore, pickled skateboard bicycle rights raw denim venmo letterpress. Chillwave farm-to-table four dollar toast viral.
+            </p>
+        </md-card-content>
+    </md-card><br>
+    <md-button class="md-primary md-raised" ui-sref="account" layout-align="center center">Update Card</md-button>
+</div>
+</div>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>

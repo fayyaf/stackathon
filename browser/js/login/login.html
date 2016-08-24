@@ -1,16 +1,19 @@
-<form id="login-form" name="loginForm" ng-submit="loginForm.$valid && sendLogin(login)">
+<section id="about"><h2>Log In</h2><hr></section><br>
+<div ng-controller="LoginCtrl" layout="column" ng-submit="loginForm.$valid && sendLogin(login)" ng-cloak>
+    <md-content layout-padding>
+        <form name="loginForm" id="login-form">
 
-    <alert type="danger" ng-show="error">
-        {{ error }}
-    </alert>
+            <md-input-container class="md-block"">
+                <label>Email</label>
+                <input type="text" name="email" ng-model="login.email" required>
+            </md-input-container>
 
-    <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="text" ng-model="login.email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="login-password">Password</label>
-        <input type="password" ng-model="login.password" class="form-control" id="login-password" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="login.password" required>
+            </md-input-container>
+            <md-button class="btn1 md-raised" type="submit">Login</button>
+        </form>
+    </md-content>
+</div>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>

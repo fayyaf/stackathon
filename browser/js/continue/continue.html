@@ -1,0 +1,38 @@
+<br>
+<div ng-controller="ContinueCtrl" layout="column" ng-cloak>
+    <md-content layout-padding>
+        <form name="continueForm" id="signup-form" ng-submit="continueForm.$valid && createCard()">
+
+            <h5>Say Something About Yourself</h5>
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <input type="text" name="description" ng-model="newCard.description" md-maxlength="150">
+                <p ng-message="required" ng-show="continueForm.description.$invalid && !continueForm.description.$pristine">The description must be less than 150 characters long!</p>
+            </md-input-container>
+
+            <h5>Social Media Links</h5>
+            <md-input-container class="md-block">
+                <label>Facebook (ex: lydiascott)</label>
+                <input type="facebook" name="facebook" ng-model="newCard.facebook">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Twitter (ex: @LydiaScott)</label>
+                <input type="twitter" name="twitter" ng-model="newCard.twitter">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Instagram (ex: lydia_scott)</label>
+                <input type="instagram" name="instagram" ng-model="newCard.instagram">
+            </md-input-container>   
+            <md-input-container class="md-block">
+                <label>Snapchat (ex: lydia.scott)</label>
+                <input type="snapchat" name="snapchat" ng-model="newCard.snapchat">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Pintrest (ex: lscott)</label>
+                <input type="pintrest" name="pintrest" ng-model="newCard.pintrest">
+            </md-input-container>
+            <md-button class="btn1 md-raised" type="submit">Complete Signup</button>
+        </form>
+    </md-content>
+</div>
+<footer>&nbsp;&nbsp;© 2016 CALLING CARD</footer>
